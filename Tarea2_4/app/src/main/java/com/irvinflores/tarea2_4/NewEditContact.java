@@ -10,6 +10,14 @@ import android.view.MenuItem;
 
 public class NewEditContact extends AppCompatActivity {
 
+    public void enableComponents(){
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setTitle("Edit Image");
+       
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,10 +27,12 @@ public class NewEditContact extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         final ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setHomeButtonEnabled(true);
-            getSupportActionBar().setTitle("Edit Image");
+
+        final boolean isActionBarNul = actionBar != null;
+
+
+        if (isActionBarNul) {
+            enableComponents();
         }
     }
 
